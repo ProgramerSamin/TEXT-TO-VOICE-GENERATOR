@@ -1,17 +1,17 @@
-from gtts import gTTS
+  from gtts import gTTS
 import os
 import time
 
 def speak_text(text):
     """
-    Convert text to speech and play it.
+    Convert text to speech and play it with a slower speed.
     """
     try:
         # Generate a unique filename based on the current timestamp
         audio_file = f"output_{int(time.time())}.mp3"
         
-        # Convert text to speech and save the file
-        tts = gTTS(text=text, lang='en')
+        # Convert text to speech with slower speed
+        tts = gTTS(text=text, lang='en', slow=True)
         tts.save(audio_file)
         
         # Play the audio file
